@@ -1,0 +1,326 @@
+#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+#_Stock_Synthesis_is_a_work_of_the_U.S._Government_and_is_not_subject_to_copyright_protection_in_the_United_States.
+#_Foreign_copyrights_may_apply._See_copyright.txt_for_more_information.
+#_User_support_available_at:NMFS.Stock.Synthesis@noaa.gov
+#_User_info_available_at:https://vlab.noaa.gov/group/stock-synthesis
+#_Source_code_at:_https://github.com/nmfs-stock-synthesis/stock-synthesis
+
+#_Start_time: Thu Aug 18 08:54:14 2022
+#_Number_of_datafiles: 1
+#C data file created using the SS_writedat function in the R package r4ss
+#C should work with SS version:
+#C file write time: 2020-03-27 14:45:39
+#_observed data: 
+#V3.30.18.00;_safe;_compile_date:_Sep 30 2021;_Stock_Synthesis_by_Richard_Methot_(NOAA)_using_ADMB_12.3
+1959 #_StartYr
+2019 #_EndYr
+1 #_Nseas
+ 12 #_months/season
+2 #_Nsubseasons (even number, minimum is 2)
+1 #_spawn_month
+2 #_Ngenders: 1, 2, -1  (use -1 for 1 sex setup with SSB multiplied by female_frac parameter)
+26 #_Nages=accumulator age, first age is always age 0
+1 #_Nareas
+2 #_Nfleets (including surveys)
+#_fleet_type: 1=catch fleet; 2=bycatch only fleet; 3=survey; 4=predator(M2) 
+#_sample_timing: -1 for fishing fleet to use season-long catch-at-age for observations, or 1 to use observation month;  (always 1 for surveys)
+#_fleet_area:  area the fleet/survey operates in 
+#_units of catch:  1=bio; 2=num (ignored for surveys; their units read later)
+#_catch_mult: 0=no; 1=yes
+#_rows are fleets
+#_fleet_type fishery_timing area catch_units need_catch_mult fleetname
+ 1 -1 1 1 0 Bottom_Trawls  # 1
+ 1 -1 1 1 0 Bottom_gillnet  # 2
+#Bycatch_fleet_input_goes_next
+#a:  fleet index
+#b:  1=include dead bycatch in total dead catch for F0.1 and MSY optimizations and forecast ABC; 2=omit from total catch for these purposes (but still include the mortality)
+#c:  1=Fmult scales with other fleets; 2=bycatch F constant at input value; 3=bycatch F from range of years
+#d:  F or first year of range
+#e:  last year of range
+#f:  not used
+# a   b   c   d   e   f 
+#_Catch data: yr, seas, fleet, catch, catch_se
+#_catch_se:  standard error of log(catch)
+#_NOTE:  catch data is ignored for survey fleets
+-999 1 1 1e-20 0.01
+1959 1 1 0 0.01
+1960 1 1 378 0.01
+1961 1 1 325 0.01
+1962 1 1 756 0.01
+1963 1 1 433 0.01
+1964 1 1 747 0.01
+1965 1 1 715 0.01
+1966 1 1 500 0.01
+1967 1 1 1329 0.01
+1968 1 1 1229 0.01
+1969 1 1 1612 0.01
+1970 1 1 2185 0.01
+1971 1 1 4036 0.01
+1972 1 1 5286 0.01
+1973 1 1 13887 0.01
+1974 1 1 12118 0.01
+1975 1 1 13123 0.01
+1976 1 1 15288 0.01
+1977 1 1 15830 0.01
+1978 1 1 13483 0.01
+1979 1 1 8522 0.01
+1980 1 1 10807 0.01
+1981 1 1 11579 0.01
+1982 1 1 7884 0.01
+1983 1 1 10755 0.01
+1984 1 1 16103 0.01
+1985 1 1 10498 0.01
+1986 1 1 11977 0.01
+1987 1 1 11086 0.01
+1988 1 1 7362 0.01
+1989 1 1 5994 0.01
+1990 1 1 4499 0.01
+1991 1 1 5952 0.01
+1992 1 1 5925 0.01
+1993 1 1 5971 0.01
+1994 1 1 4637 0.01
+1995 1 1 6738 0.01
+1996 1 1 2912 0.01
+1997 1 1 2529 0.01
+1998 1 1 1422 0.01
+1999 1 1 2532 0.01
+2000 1 1 3568 0.01
+2001 1 1 8648 0.01
+2002 1 1 9309 0.01
+2003 1 1 6474 0.01
+2004 1 1 6676 0.01
+2005 1 1 5322 0.01
+2006 1 1 4853 0.01
+2007 1 1 6673 0.01
+2008 1 1 4463 0.01
+2009 1 1 6810 0.01
+2010 1 1 8926 0.01
+2011 1 1 10547 0.01
+2012 1 1 4936 0.01
+2013 1 1 4579 0.01
+2014 1 1 3322 0.01
+2015 1 1 2304 0.01
+2016 1 1 4062 0.01
+2017 1 1 5160 0.01
+2018 1 1 3542 0.01
+2019 1 1 3345 0.01
+-999 1 2 1e-20 0.01
+1959 1 2 0 0.01
+1960 1 2 32 0.01
+1961 1 2 28 0.01
+1962 1 2 64 0.01
+1963 1 2 37 0.01
+1964 1 2 64 0.01
+1965 1 2 61 0.01
+1966 1 2 43 0.01
+1967 1 2 113 0.01
+1968 1 2 105 0.01
+1969 1 2 137 0.01
+1970 1 2 186 0.01
+1971 1 2 343 0.01
+1972 1 2 450 0.01
+1973 1 2 1181 0.01
+1974 1 2 1031 0.01
+1975 1 2 1044 0.01
+1976 1 2 2179 0.01
+1977 1 2 1157 0.01
+1978 1 2 1183 0.01
+1979 1 2 630 0.01
+1980 1 2 474 0.01
+1981 1 2 768 0.01
+1982 1 2 390 0.01
+1983 1 2 987 0.01
+1984 1 2 1332 0.01
+1985 1 2 1077 0.01
+1986 1 2 731 0.01
+1987 1 2 1358 0.01
+1988 1 2 488 0.01
+1989 1 2 352 0.01
+1990 1 2 426 0.01
+1991 1 2 832 0.01
+1992 1 2 594 0.01
+1993 1 2 1916 0.01
+1994 1 2 1152 0.01
+1995 1 2 1375 0.01
+1996 1 2 1038 0.01
+1997 1 2 346 0.01
+1998 1 2 298 0.01
+1999 1 2 1024 0.01
+2000 1 2 2174 0.01
+2001 1 2 3442 0.01
+2002 1 2 3773 0.01
+2003 1 2 3468 0.01
+2004 1 2 4320 0.01
+2005 1 2 4223 0.01
+2006 1 2 5748 0.01
+2007 1 2 4994 0.01
+2008 1 2 4775 0.01
+2009 1 2 4741 0.01
+2010 1 2 3235 0.01
+2011 1 2 1981 0.01
+2012 1 2 401 0.01
+2013 1 2 989 0.01
+2014 1 2 1197 0.01
+2015 1 2 852 0.01
+2016 1 2 2054 0.01
+2017 1 2 1121 0.01
+2018 1 2 1330 0.01
+2019 1 2 1206 0.01
+-9999 0 0 0 0
+#
+ #_CPUE_and_surveyabundance_observations
+#_Units:  0=numbers; 1=biomass; 2=F; 30=spawnbio; 31=recdev; 32=spawnbio*recdev; 33=recruitment; 34=depletion(&see Qsetup); 35=parm_dev(&see Qsetup)
+#_Errtype:  -1=normal; 0=lognormal; >0=T
+#_SD_Report: 0=no sdreport; 1=enable sdreport
+#_Fleet Units Errtype SD_Report
+1 1 0 0 # Bottom_Trawls
+2 1 0 0 # Bottom_gillnet
+#_yr month fleet obs stderr
+2000 7 1 1.88127 0.0208777 #_ Bottom_Trawls
+2001 7 1 1.7387 0.00503434 #_ Bottom_Trawls
+2002 7 1 1.59447 0.0049902 #_ Bottom_Trawls
+2003 7 1 1.47304 0.00405183 #_ Bottom_Trawls
+2004 7 1 1.48156 0.00568547 #_ Bottom_Trawls
+2005 7 1 1.31765 0.00418417 #_ Bottom_Trawls
+2006 7 1 1.12363 0.00491251 #_ Bottom_Trawls
+2007 7 1 1.00281 0.00551668 #_ Bottom_Trawls
+2008 7 1 0.901938 0.0054093 #_ Bottom_Trawls
+2009 7 1 1.04871 0.00581324 #_ Bottom_Trawls
+2010 7 1 1.11665 0.00537494 #_ Bottom_Trawls
+2011 7 1 0.999837 0.00864937 #_ Bottom_Trawls
+2012 7 1 0.819327 0.0156677 #_ Bottom_Trawls
+2013 7 1 0.709781 0.0106411 #_ Bottom_Trawls
+2014 7 1 0.610977 0.0125858 #_ Bottom_Trawls
+2015 7 1 0.525557 0.0143591 #_ Bottom_Trawls
+2016 7 1 0.446399 0.0207604 #_ Bottom_Trawls
+2017 7 1 0.42938 0.0206322 #_ Bottom_Trawls
+2018 7 1 0.39919 0.0279648 #_ Bottom_Trawls
+2019 7 1 0.379121 0.0222756 #_ Bottom_Trawls
+-9999 1 1 1 1 # terminator for survey observations 
+#
+0 #_N_fleets_with_discard
+#_discard_units (1=same_as_catchunits(bio/num); 2=fraction; 3=numbers)
+#_discard_errtype:  >0 for DF of T-dist(read CV below); 0 for normal with CV; -1 for normal with se; -2 for lognormal; -3 for trunc normal with CV
+# note: only enter units and errtype for fleets with discard 
+# note: discard data is the total for an entire season, so input of month here must be to a month in that season
+#_Fleet units errtype
+# -9999 0 0 0.0 0.0 # terminator for discard data 
+#
+0 #_use meanbodysize_data (0/1)
+#_COND_0 #_DF_for_meanbodysize_T-distribution_like
+# note:  type=1 for mean length; type=2 for mean body weight 
+#_yr month fleet part type obs stderr
+#  -9999 0 0 0 0 0 0 # terminator for mean body size data 
+#
+# set up population length bin structure (note - irrelevant if not using size data and using empirical wtatage
+2 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
+2 # binwidth for population size comp 
+4 # minimum size in the population (lower edge of first bin and size at age 0.00) 
+52 # maximum size in the population (lower edge of last bin) 
+1 # use length composition data (0/1)
+#_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
+#_addtocomp:  after accumulation of tails; this value added to all bins
+#_combM+F: males and females treated as combined gender below this bin number 
+#_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
+#_Comp_Error:  0=multinomial, 1=dirichlet
+#_ParmSelect:  parm number for dirichlet
+#_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
+#_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
+-1 0.001 0 0 0 0 0.001 #_fleet:1_Bottom_Trawls
+-1 0.001 0 0 0 0 0.001 #_fleet:2_Bottom_gillnet
+# sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
+# partition codes:  (0=combined; 1=discard; 2=retained
+23 #_N_LengthBins; then enter lower edge of each length bin
+ 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50
+#_yr month fleet sex part Nsamp datavector(female-male)
+ 1977 1 1 1 0 9.6 0 0 1 16 43 106 209 378 611 1564 2813 3244 2733 1521 657 199 47 6 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1978 1 1 1 0 10.4 0 0 5 88 138 144 686 2140 3937 6165 4484 4484 5184 3758 1649 528 110 21 6 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1979 1 1 1 0 9.5 0 2 9 36 22 37 148 482 603 1348 2447 2693 2480 1992 880 216 43 6 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1980 1 1 1 0 10 0 1 9 20 112 294 434 872 2982 4940 4207 3207 2798 1853 812 166 22 6 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1981 1 1 1 0 10 0 0 2 38 51 39 437 976 2843 3869 5360 4248 2301 1398 646 156 22 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1982 1 1 1 0 10 0 0 1 10 35 41 290 757 1889 4691 5759 4632 2665 1260 690 219 54 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1983 1 1 1 0 9.7 0 0 1 7 5 14 155 649 1273 2673 3538 3207 2355 1147 490 198 48 12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1984 1 1 1 0 9.7 0 0 5 12 27 88 196 602 907 2285 2826 3240 2650 1737 912 393 119 22 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1985 1 1 1 0 9.6 0 0 1 5 24 35 105 399 465 559 1322 2893 3933 3193 1585 545 147 34 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1986 1 1 1 0 9.8 0 1 0 0 34 111 226 884 1644 2257 2501 2413 2686 2516 1626 658 167 39 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1987 1 1 1 0 9.7 0 0 1 9 30 49 275 673 755 1442 2713 3974 2453 1590 1177 499 127 17 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1988 1 1 1 0 9.1 0 0 1 3 3 26 190 350 355 783 1424 2161 1826 916 436 218 59 13 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1989 1 1 1 0 9 0 1 0 0 11 26 126 317 238 391 960 1805 1880 1211 629 285 104 9 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1990 1 1 1 0 8.8 0 0 0 0 0 4 58 256 387 398 847 1342 1330 1071 615 256 73 12 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1991 1 1 1 0 9.3 0 0 0 0 9 128 260 952 649 785 1767 2142 1849 1162 707 263 82 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1992 1 1 1 0 9.5 0 0 0 0 1 37 304 890 699 1532 2465 1990 2125 1558 875 347 109 37 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1993 1 1 1 0 8.9 0 0 0 0 3 5 115 535 945 1581 1202 793 827 643 428 193 62 10 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1994 1 1 1 0 8.6 0 0 0 1 5 81 379 1138 793 408 548 590 585 411 357 207 68 15 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1997 1 1 1 0 8.4 0 0 0 1 36 67 31 136 845 917 566 544 469 369 208 129 58 13 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1999 1 1 1 0 9 0 0 0 13 41 36 82 1024 1638 1622 1626 902 339 279 201 156 63 19 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2006 1 1 1 0 8.3 0 0 0 7 26 18 87 381 704 600 406 639 586 287 149 52 19 5 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2007 1 1 1 0 8.1 0 0 0 0 5 23 226 634 693 404 367 323 275 195 95 42 14 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2008 1 1 1 0 9.3 0 0 0 1 8 88 419 1719 2688 1467 1111 949 649 407 383 299 173 59 20 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2009 1 1 1 0 9.8 0 0 1 1 8 66 531 1861 3823 3641 2934 2009 859 462 395 398 300 135 46 10 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2010 1 1 1 0 9.5 0 0 0 1 11 15 234 2095 3100 2338 2179 1687 884 358 216 239 210 105 24 6 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2011 1 1 1 0 9.7 0 0 0 1 8 32 298 2067 3418 3002 2635 1878 977 594 460 429 281 112 21 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2012 1 1 1 0 9.4 0 0 0 0 3 20 319 1486 2259 2374 2038 1178 588 308 239 290 228 148 75 16 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2014 1 1 1 0 7.1 0 0 0 0 2 3 14 28 159 247 309 272 140 53 12 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2016 1 1 1 0 9.6 0 0 0 1 7 24 596 2490 3101 3725 2789 1203 470 234 138 81 21 9 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2017 1 1 1 0 9 0 0 0 0 15 90 421 846 1251 1784 1385 857 327 196 155 258 241 140 39 8 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2018 1 1 1 0 8.9 0 0 0 2 4 11 178 913 1285 1569 1509 901 499 313 221 128 61 26 5 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2019 1 1 1 0 8.3 0 0 0 4 6 25 267 669 846 792 559 325 158 132 127 108 71 20 10 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1994 1 2 1 0 6.2 0 0 0 0 0 0 0 0 3 5 23 57 60 62 72 86 71 22 6 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 1999 1 2 1 0 6.7 0 0 0 1 0 0 13 64 12 62 158 154 80 98 90 55 26 5 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2001 1 2 1 0 6.2 0 0 0 0 0 0 0 1 11 45 54 64 62 93 78 58 31 11 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2006 1 2 1 0 7.5 0 0 0 0 0 0 0 1 3 13 87 278 453 373 303 183 90 15 5 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2007 1 2 1 0 7.8 0 0 0 0 0 0 0 0 4 40 213 378 460 518 371 220 82 39 20 4 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2008 1 2 1 0 6.8 0 0 0 0 0 0 0 0 1 0 8 43 47 110 214 264 147 52 10 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2009 1 2 1 0 7.9 0 0 0 0 0 0 0 3 25 111 310 347 189 241 342 492 420 176 56 15 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2010 1 2 1 0 6.5 0 0 0 0 0 0 0 1 4 5 14 32 71 114 133 144 79 48 12 3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2011 1 2 1 0 7.6 0 0 0 0 0 0 0 0 20 117 424 566 358 201 110 120 82 33 5 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2012 1 2 1 0 7.5 0 0 0 0 0 0 2 4 14 130 425 408 339 211 140 116 63 23 6 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2014 1 2 1 0 7.2 0 0 0 0 0 0 0 0 3 16 112 234 305 291 218 87 47 28 5 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2015 1 2 1 0 7.5 0 0 0 0 0 0 0 4 12 139 349 427 362 250 140 70 37 8 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2016 1 2 1 0 6.8 0 0 0 0 0 0 0 4 15 85 247 281 126 67 43 28 14 4 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2017 1 2 1 0 6.8 0 0 0 0 0 0 0 5 21 75 203 268 179 79 33 13 6 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2018 1 2 1 0 8.2 0 0 0 0 0 0 1 6 16 98 412 646 692 655 577 346 167 59 15 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 2019 1 2 1 0 7.4 0 0 0 0 0 1 2 1 10 91 252 376 319 264 150 81 28 6 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+-9999 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+#
+0 #_N_age_bins
+# 0 #_N_ageerror_definitions
+#_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
+#_addtocomp:  after accumulation of tails; this value added to all bins
+#_combM+F: males and females treated as combined gender below this bin number 
+#_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
+#_Comp_Error:  0=multinomial, 1=dirichlet
+#_ParmSelect:  parm number for dirichlet
+#_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+#
+#_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
+# 0 0 67 67 67 21758030 0 #_fleet:1_Bottom_Trawls
+# 0 0 0 0 0 0 0 #_fleet:2_Bottom_gillnet
+# 0 #_Lbin_method_for_Age_Data: 1=poplenbins; 2=datalenbins; 3=lengths
+# sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
+# partition codes:  (0=combined; 1=discard; 2=retained
+#_yr month fleet sex part ageerr Lbin_lo Lbin_hi Nsamp datavector(female-male)
+# -9999  0 0 0 0 0 0 0 0
+#
+0 #_Use_MeanSize-at-Age_obs (0/1)
+#
+0 #_N_environ_variables
+# -2 in yr will subtract mean for that env_var; -1 will subtract mean and divide by stddev (e.g. Z-score)
+#Yr Variable Value
+#
+0 # N sizefreq methods to read 
+#
+0 # do tags (0/1)
+#
+0 #    morphcomp data(0/1) 
+#  Nobs, Nmorphs, mincomp
+#  yr, seas, type, partition, Nsamp, datavector_by_Nmorphs
+#
+0  #  Do dataread for selectivity priors(0/1)
+# Yr, Seas, Fleet,  Age/Size,  Bin,  selex_prior,  prior_sd
+# feature not yet implemented
+#
+999
+
+ENDDATA
